@@ -1,0 +1,8 @@
+<section id='header'>
+  <%= link_to 'Brogress', root_path %>, your digital bookmarks
+  <span>
+    <% if signed_in?%>
+      <%= link_to current_user.name, current_user %> | <%= link_to 'Logout', logout_path %>
+    <% end %>
+  </span>
+</section>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Brogress</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brogress,your digital bookmarks">
+  <meta name="author" content="gonglexin">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Galdeano' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render partial: 'layouts/header' %>
+
+  <section id='main'>
+    <% unless flash.empty? %>
+      <ul id='notice'>
+        <% flash.each do |key, value| %>
+          <%= content_tag('li', value) %>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= yield %>
+
+    <%= render partial: 'layouts/footer' %>
+  </section>
+</body>
+</html>

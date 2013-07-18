@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+david:
+  name: David Li
+  email: david@gmail.com
+  password_digest: password_digest
+
+steve:
+  name: Steve Jobs
+  email: jobs@apple.com
+  password_digest: password_digest

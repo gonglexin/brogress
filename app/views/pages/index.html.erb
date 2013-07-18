@@ -1,0 +1,10 @@
+<h1>Welcome to Brogress</h1>
+<p>
+Brogress is a tool for tracking your progress of reading &amp; watching and everyting you can imagine.
+It's your digital bookmarks
+</p>
+
+<% unless signed_in? %>
+  <%= link_to 'Login', login_path %> or <%= link_to 'Register', register_path %>
+<% end %>
+
