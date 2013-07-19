@@ -10,6 +10,10 @@ body {
   font-size: 20px;
 }
 
+.clear {
+  clear: both;
+}
+
 /*a {*/
   /*color: blue;*/
 
@@ -18,9 +22,26 @@ body {
   /*}*/
 /*}*/
 
-input {
+input, textarea {
   font-family: $font-family;
   font-size: 20px;
+}
+
+input[type='text'], input[type='email'], input[type='password'] {
+
+  &:disabled {
+    background-color: #eeeeee; 
+  }
+}
+
+input[type='submit'], input[type='button'] {
+  /*button style here*/
+}
+
+input[type='url'] {
+  &:invalid {
+    /*border-color: red;*/
+  }
 }
 
 #header {
@@ -30,7 +51,18 @@ input {
   border-bottom: 1px solid;
   border-color: #ccc;
 
-  span {
+  div {
+    float: left;
+    ul {
+      margin: 0 0 0 4px;
+      li {
+        list-style-type: none;
+        padding: 0 4px;
+        float: left;
+      }
+    }
+  }
+  #control {
     float: right;
   }
 }
@@ -43,22 +75,12 @@ input {
     }
   }
 
-  input[type='text'], input[type='email'], input[type='password'] {
-
-    &:disabled {
-      background-color: #eeeeee; 
-    }
-  }
-
-  input[type='submit'], input[type='button'] {
-    /*button style here*/
-  }
-
   #notice, #error_explanation {
     list-style-type: none;
     background-color: #fdfddd;
     padding: 10px 40px 10px 10px;
     border: 1px solid;
+    border-radius: 4px;
     border-color: #ccc;
     margin: 10px 0 40px 0;
   }
@@ -70,7 +92,7 @@ input {
 
 #footer {
   margin-top: 1em;
-  border-top: 1px dashed #CCC;
+  border-top: 1px dashed #ccc;
 
   p {
     color: #999;

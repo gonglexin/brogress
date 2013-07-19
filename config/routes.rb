@@ -5,10 +5,11 @@ Brogress::Application.routes.draw do
   get 'help',     to: 'pages#help'
   get 'register', to: 'users#new'
   get 'login',    to: 'sessions#new'
-  get 'logout',   to: 'sessions#destroy'
+  delete 'logout',   to: 'sessions#destroy'
 
   resources :users
   resources :sessions, only: :create
+  resources :items, except: :destroy
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

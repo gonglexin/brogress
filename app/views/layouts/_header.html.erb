@@ -1,8 +1,20 @@
 <div id='header'>
-  <%= link_to 'Brogress', root_path %>, your digital bookmarks
-  <span>
-    <% if signed_in?%>
-      <%= link_to current_user.name, current_user %> | <%= link_to 'Logout', logout_path %>
-    <% end %>
-  </span>
+  <div>
+    <%= link_to 'Brogress', root_path %>, your digital bookmarks
+  </div>
+  <% if signed_in?%>
+    <div>
+      <ul id="nav">
+        <li>
+          <%= link_to 'Your brogress', '#' %>
+        </li>
+        <li>
+          <%= link_to 'Items', items_path %>
+        </li>
+      </ul>
+    </div>
+    <div id="control">
+      <%= link_to current_user.name, current_user %> | <%= link_to 'Logout', logout_path, method: :delete %>
+    </div>
+  <% end %>
 </div>

@@ -1,0 +1,31 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item {
+  height: 180px;
+  width: 140px;
+  margin: 20px 20px 20px 0;
+  /*padding: 10px;*/
+  float: left;
+  color: #555;
+  line-height: 16px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(34,25,25,0.4);
+
+  img {
+    width: 140px;
+    height: 140px;
+    border: none;
+  }
+
+  .title {
+    padding-left: 4px;
+    font-size: small;
+  }
+}
+
+.info {
+  float: left;
+  margin: 5px 0 0 40px;
+}

@@ -1,0 +1,19 @@
+<h1>Listing items</h1>
+
+<p>
+You can choose items below which others people most choosed. Don't like it? <%= link_to 'Click and get a randomm collection.', '#' %>
+</p>
+
+<%= form_tag '/' do %>
+  <div class="field">
+    <%= label_tag :title, 'Search' %>
+    <div>
+      <%= search_field_tag :title, params[:title] %>
+    </div>
+  </div>
+<% end %>
+
+<%= render @items %>
+
+<div class="clear"></div>
+Haven't find a item you want? <%= link_to 'Add yours!', new_item_path %>
