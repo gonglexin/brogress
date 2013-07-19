@@ -15,7 +15,7 @@
 <body>
   <%= render partial: 'layouts/header' %>
 
-  <section id='main'>
+  <div id='main'>
     <% unless flash.empty? %>
       <ul id='notice'>
         <% flash.each do |key, value| %>
@@ -27,6 +27,6 @@
     <%= yield %>
 
     <%= render partial: 'layouts/footer' %>
-  </section>
+  </div>
 </body>
 </html>
