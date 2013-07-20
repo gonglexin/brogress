@@ -27,12 +27,23 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# pagination
+gem 'kaminari'
+# upload files
+gem 'carrierwave'
+# handle images
+gem 'mini_magick'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+group :development, :test do
+  gem 'faker', '~> 1.1.2'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'

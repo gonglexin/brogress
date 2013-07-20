@@ -1,5 +1,11 @@
+<h1><%= @item.title %></h1>
+
 <div class="item">
-  <%= link_to image_tag(@item.image), @item %>
+  <% if @item.image.url %>
+    <%= link_to image_tag(@item.image), @item %>
+  <% else %>
+    <%= link_to image_tag("http://placekitten.com/#{140 + @item.id}"), @item %>
+  <% end %>
   <div class="title"><%= @item.title %></div>
 </div>
 
@@ -31,7 +37,7 @@
 
   <p>
     <strong>Url:</strong>
-    <%= @item.url %>
+    <%= link_to @item.url, @item.url %>
   </p>
 
   <p>
@@ -41,5 +47,7 @@
 </div>
 
 <div class="clear"> </div>
-<%= link_to 'Edit', edit_item_path(@item) %> |
+<% if @item.user == current_user %>
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+<% end %>
 <%= link_to 'Back', items_path %>

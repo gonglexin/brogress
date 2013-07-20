@@ -1,19 +1,24 @@
 <h1>Listing items</h1>
 
 <p>
-You can choose items below which others people most choosed. Don't like it? <%= link_to 'Click and get a randomm collection.', '#' %>
+  <%= link_to 'Yours', items_path %>
+  | <%= link_to 'All', controller: 'items', action: 'index', all: true %>
+  | <%= link_to 'Add a new item', new_item_path %>
 </p>
 
-<%= form_tag '/' do %>
-  <div class="field">
-    <%= label_tag :title, 'Search' %>
-    <div>
-      <%= search_field_tag :title, params[:title] %>
-    </div>
-  </div>
-<% end %>
+<%#<%= form_tag '/' do %>
+  <%#<div class="field">%>
+    <%#<%= label_tag :title, 'Search' %>
+    <%#<div>%>
+      <%#<%= search_field_tag :title, params[:title] %>
+    <%#</div>%>
+  <%#</div>%>
+<%#<% end %>
 
 <%= render @items %>
-
 <div class="clear"></div>
+<%= paginate @items %>
+
+<p>
 Haven't find a item you want? <%= link_to 'Add yours!', new_item_path %>
+</p>

@@ -1,49 +1,47 @@
 <%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  <%= render 'shared/error_messages', target: @item %>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <div class="item">
+    <%= item_image_tag(@item) %>
+    <div class="title"><%= @item.title %></div>
+  </div>
+  <div class="info">
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <div class="field">
+      <%= f.label :total %><br>
+      <%= f.number_field :total %>
+    </div>
+    <div class="field">
+      <%= f.label :subtitle %><br>
+      <%= f.text_field :subtitle %>
+    </div>
+    <div class="field">
+      <%= f.label :author %><br>
+      <%= f.text_field :author %>
+    </div>
+    <div class="field">
+      <%= f.label :category %><br>
+      <%= f.text_field :category %>
+    </div>
+    <div class="field">
+      <%= f.label :url %><br>
+      <%= f.url_field :url %>
+    </div>
+    <div class="field">
+      <%= f.label :image %><br>
+      <%= f.hidden_field :image_cache %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :total %><br>
-    <%= f.number_field :total %>
-  </div>
-  <div class="field">
-    <%= f.label :subtitle %><br>
-    <%= f.text_field :subtitle %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.url_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="clear"> </div>
 <% end %>

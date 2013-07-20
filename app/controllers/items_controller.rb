@@ -1,8 +1,16 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_authority, only: [:edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    # TODO: show all items order by popularity or give user a suggest list
+    # TODO: random collection
+    #@items = Item.all.page params[:page]
+    if params[:all]
+      @items = Item.all.page params[:page]
+    else
+      @items = current_user.items.page params[:page]
+    end
   end
 
   def show
@@ -56,5 +64,9 @@ class ItemsController < ApplicationController
 
     def item_params
       params.require(:item).permit(:title, :total, :subtitle, :author, :category, :url, :image, :description)
+    end
+
+    def check_authority
+      redirect_to @item, notice: "This item is not belongs to you, you can't doing any changes with it." unless current_user == @item.user
     end
 end

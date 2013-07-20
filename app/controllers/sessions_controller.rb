@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :require_login
 
   def new
-    redirect_to items_path, notice: "Already Logged In"  if signed_in?
+    redirect_to items_path, notice: "Already logged in"  if signed_in?
   end
 
   def create

@@ -16,3 +16,6 @@
 /tmp
 
 todo.md
+/public/uploads/*
+*.swp
+.DS_Store

@@ -6,15 +6,19 @@
     <div>
       <ul id="nav">
         <li>
-          <%= link_to 'Your brogress', '#' %>
+          <%= link_to 'Your brogress', items_path %>
         </li>
         <li>
-          <%= link_to 'Items', items_path %>
+          <%= link_to 'Cool brogress people doing', controller: 'items', action: 'index', all: true %>
         </li>
       </ul>
     </div>
     <div id="control">
       <%= link_to current_user.name, current_user %> | <%= link_to 'Logout', logout_path, method: :delete %>
+    </div>
+  <% else %>
+    <div id="control">
+      <%= link_to 'Register', register_path %> | <%= link_to 'Login', login_path %>
     </div>
   <% end %>
 </div>

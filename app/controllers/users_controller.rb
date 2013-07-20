@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    redirect_to users_path if signed_in?
+    redirect_to items_path, notice: "Already logged in" if signed_in?
     @user = User.new
   end
 
