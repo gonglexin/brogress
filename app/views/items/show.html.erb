@@ -21,6 +21,11 @@
   </p>
 
   <p>
+    <strong>Progress:</strong>
+    <%= @item.progress %>
+  </p>
+
+  <p>
     <strong>Total:</strong>
     <%= @item.total %>
   </p>
@@ -47,6 +52,8 @@
 </div>
 
 <div class="clear"> </div>
+<%= render partial: 'item_progress', collection: [@item], as: :item %>
+
 <% if @item.user == current_user %>
   <%= link_to 'Edit', edit_item_path(@item) %> |
 <% end %>

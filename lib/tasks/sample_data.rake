@@ -10,19 +10,22 @@ namespace :db do
                 password: 'password',
                 password_confirmation: 'password')
 
-    User.create(name: 'admin',
-                email: 'admin@example.com',
-                password: 'password',
-                password_confirmation: 'password')
+    (1..100).each do |i|
+      user = User.create(name: Faker::Name.first_name,
+                         email: Faker::Internet.email,
+                         password: 'password',
+                         password_confirmation: 'password')
 
-    100.times do |i|
-      Item.create(title:       Faker::Lorem.words(rand(1..3)).join(' ').titleize,
-                  total:       rand(20..1000),
-                  author:      Faker::Name.name, 
-                  category:    'Book',
-                  url:         Faker::Internet.url,
-                  description: Faker::Lorem.paragraph(1),
-                  user_id:     (i % 2) + 1)
+      rand(0..10).times do
+        item = user.items.build(title:       Faker::Lorem.words(rand(1..3)).join(' ').titleize,
+                         total:       rand(100..400),
+                         progress:    rand(0..100),
+                         author:      Faker::Name.name, 
+                         category:    'Book',
+                         url:         Faker::Internet.url,
+                         description: Faker::Lorem.paragraph(1))
+        item.save
+      end
     end
   end
 end

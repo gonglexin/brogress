@@ -8,4 +8,13 @@ class Item < ActiveRecord::Base
 
   validates :total, presence:     true,
                     numericality: { greater_than: 0 }
+
+  def percent
+    if self.progress
+      percent = ((self.progress.to_f / self.total) * 100).round
+    else
+      percent = 0
+    end
+    "#{percent}%"
+  end
 end

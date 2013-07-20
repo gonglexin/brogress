@@ -1,17 +1,31 @@
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="user">
+  <%= user_image_tag(@user) %>
+</div>
+<div class="info">
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+</div>
 
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
+<div class="clear"></div>
+<%= link_to_function 'Image', "$('#list').hide(); $('#image').show()" %> |
+<%= link_to_function 'List',  "$('#image').hide(); $('#list').show()"%>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<div id="list" style="dispaly: none;">
+  <%= render partial: 'items/item_progress', collection: @user.items, as: :item %>
+</div>
+<div id="image" style="display: none;">
+  <%= render @user.items %>
+</div>
+
+<div class="clear"></div>
+<% if @user == current_user %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
 <%= link_to 'Back', users_path %>

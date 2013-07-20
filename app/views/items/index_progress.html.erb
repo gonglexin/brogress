@@ -1,0 +1,9 @@
+<h1>Brogress it!</h1>
+
+<%= render partial: 'item_progress', collection: @items, :as => :item %>
+<div class="clear"></div>
+<%= paginate @items %>
+
+<p>
+Haven't find a item you want? <%= link_to 'Add yours!', new_item_path %>
+</p>

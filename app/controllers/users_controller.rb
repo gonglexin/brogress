@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :check_authority, only: [:edit, :update, :destroy]
   skip_before_action :require_login, only: [:new, :create]
 
   def index
-    @users = User.all
+    @users = User.all.page params[:page]
   end
 
   def show
@@ -58,5 +59,9 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def check_authority
+      redirect_to @user, notice: "You only can edit profile of yourself!" unless current_user == @user
     end
 end

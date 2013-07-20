@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
       @items = Item.all.page params[:page]
     else
       @items = current_user.items.page params[:page]
+      render 'index_progress'
     end
   end
 
@@ -63,7 +64,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:title, :total, :subtitle, :author, :category, :url, :image, :description)
+      params.require(:item).permit(:title, :total, :subtitle, :author, :category, :url, :image, :description, :progress)
     end
 
     def check_authority
