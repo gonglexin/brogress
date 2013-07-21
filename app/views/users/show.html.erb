@@ -14,8 +14,8 @@
 </div>
 
 <div class="clear"></div>
-<%= link_to_function 'Image', "$('#list').hide(); $('#image').show()" %> |
-<%= link_to_function 'List',  "$('#image').hide(); $('#list').show()"%>
+<%= link_to_function 'Image View', "$('#list').hide(); $('#image').show()" %> |
+<%= link_to_function 'List View',  "$('#image').hide(); $('#list').show()"%>
 
 <div id="list" style="dispaly: none;">
   <%= render partial: 'items/item_progress', collection: @user.items, as: :item %>
