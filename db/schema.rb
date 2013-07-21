@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720084224) do
+ActiveRecord::Schema.define(version: 20130721072311) do
 
   create_table "items", force: true do |t|
     t.string   "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20130720084224) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "progress"
+    t.boolean  "public"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree

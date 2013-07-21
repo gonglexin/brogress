@@ -17,13 +17,14 @@ namespace :db do
                          password_confirmation: 'password')
 
       rand(0..10).times do
-        item = user.items.build(title:       Faker::Lorem.words(rand(1..3)).join(' ').titleize,
-                         total:       rand(100..400),
-                         progress:    rand(0..100),
-                         author:      Faker::Name.name, 
-                         category:    'Book',
-                         url:         Faker::Internet.url,
-                         description: Faker::Lorem.paragraph(1))
+        item = user.items.build(title: Faker::Lorem.words(rand(1..3)).join(' ').titleize,
+                                total: rand(100..400),
+                                progress: rand(0..100),
+                                author: Faker::Name.name, 
+                                category: 'Book',
+                                url: Faker::Internet.url,
+                                description: Faker::Lorem.paragraph(1),
+                                public: true)
         item.save
       end
     end

@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
     # TODO: random collection
     #@items = Item.all.page params[:page]
     if params[:all]
-      @items = Item.all.page params[:page]
+      @items = Item.published.page params[:page]
     else
       @items = current_user.items.page params[:page]
       render 'index_progress'
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = current_user.items.new(item_params)
 
     respond_to do |format|
       if @item.save
@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:title, :total, :subtitle, :author, :category, :url, :image, :description, :progress)
+      params.require(:item).permit(:title, :total, :subtitle, :author, :category, :url, :image, :description, :progress, :public)
     end
 
     def check_authority

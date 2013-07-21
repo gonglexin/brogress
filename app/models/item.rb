@@ -2,12 +2,16 @@ class Item < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   belongs_to :user
 
-  validates :title, presence:     true,
-                    uniqueness:   true,
-                    length:       { minimum: 2 }
+  scope :published, -> { where(public: true) }
 
-  validates :total, presence:     true,
+  validates :title, presence: true
+
+  validates :total, presence: true,
                     numericality: { greater_than: 0 }
+
+  validates :progress, presence: true,
+                       numericality: { greater_than_or_equal_to: 0,
+                                       less_than_or_equal_to: :total }
 
   def percent
     if self.progress
