@@ -21,7 +21,7 @@
   <%= render partial: 'items/item_progress', collection: @user.items.published, as: :item %>
 </div>
 <div id="image" style="display: none;">
-  <%= render @user.items %>
+  <%= render @user.items.published %>
 </div>
 
 <div class="clear"></div>
