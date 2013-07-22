@@ -22,7 +22,7 @@
 <%= link_to_function 'List View',  "$('#image').hide(); $('#list').show()"%>
 
 <% items = @user == current_user ? @user.items : @user.items.published  %>
-<div id="list" style="dispaly: none;">
+<div id="list">
   <%= render partial: 'items/item_progress', collection: items, as: :item %>
 </div>
 <div id="image" style="display: none;">

@@ -1,9 +1,8 @@
-<h1>Listing items</h1>
+<h1>All public brogress</h1>
 
 <p>
-  <%= link_to 'Yours', items_path %>
-  | <%= link_to 'All', controller: 'items', action: 'index', all: true %>
-  | <%= link_to 'Add a new item', new_item_path %>
+  <%= link_to 'Your Brogress', items_path %>
+  | <%= link_to 'Add a new brogress', new_item_path %>
 </p>
 
 <%#<%= form_tag '/' do %>
@@ -18,7 +17,3 @@
 <%= render @items %>
 <div class="clear"></div>
 <%= paginate @items %>
-
-<p>
-Haven't find a item you want? <%= link_to 'Add yours!', new_item_path %>
-</p>
