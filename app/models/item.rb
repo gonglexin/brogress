@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
   belongs_to :user
 
   scope :published, -> { where(public: true) }
+  scope :reversed, -> { order(created_at: :desc) }
 
   validates :title, presence: true
 

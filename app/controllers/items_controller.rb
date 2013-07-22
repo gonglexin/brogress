@@ -7,9 +7,9 @@ class ItemsController < ApplicationController
     # TODO: random collection
     #@items = Item.all.page params[:page]
     if params[:all]
-      @items = Item.published.page params[:page]
+      @items = Item.published.reversed.page params[:page]
     else
-      @items = current_user.items.page params[:page]
+      @items = current_user.items.reversed.page params[:page]
       render 'index_progress'
     end
   end

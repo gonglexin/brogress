@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
+  attr_accessor :current_password
+
   has_many :items, dependent: :destroy
 
   validates :name, presence: true,
