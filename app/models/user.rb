@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true,
                    uniqueness: true,
-                   length: { minimum: 2, maximum: 20 }
+                   length: { minimum: 2, maximum: 20 },
+                   # TODO i18n message
+                   format: { :with=> /\w{2,20}/, message: 'Only 数字，英文大小写，下划线_ !' }
 
   validates :email, presence: true,
                     uniqueness: true,
