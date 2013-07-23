@@ -18,7 +18,7 @@ module SessionsHelper
   end
 
   def current_user
-    if cookies[:remember_token]
+    if cookies[:remember_token] && !cookies[:remember_token].blank?
       @current_user ||= User.find(cookies[:remember_token])
     else
       nil

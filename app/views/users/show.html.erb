@@ -21,7 +21,7 @@
 <%= link_to_function 'Image View', "$('#list').hide(); $('#image').show()" %> |
 <%= link_to_function 'List View',  "$('#image').hide(); $('#list').show()"%>
 
-<% items = @user == current_user ? @user.items : @user.items.published  %>
+<% items = @user == current_user ? @user.items.reversed : @user.items.published.reversed  %>
 <div id="list">
   <%= render partial: 'items/item_progress', collection: items, as: :item %>
 </div>
