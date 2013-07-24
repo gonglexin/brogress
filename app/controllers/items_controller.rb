@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.public = true
   end
 
   def edit
