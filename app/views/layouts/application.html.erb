@@ -16,18 +16,21 @@
 <body>
   <%= render partial: 'layouts/header' %>
 
-  <div id='main'>
-    <% unless flash.empty? %>
-      <ul id='notice'>
-        <% flash.each do |key, value| %>
-          <%= content_tag('li', value) %>
+  <div id='main' class='clearfix'>
+    <div class='container'>
+      <div class='content'>
+        <% unless flash.empty? %>
+          <ul id='notice'>
+            <% flash.each do |key, value| %>
+              <%= content_tag('li', value) %>
+            <% end %>
+          </ul>
         <% end %>
-      </ul>
-    <% end %>
-
-    <%= yield %>
-
-    <%= render partial: 'layouts/footer' %>
+        <%= yield %>
+      </div>
+    </div>
   </div>
+
+  <%= render partial: 'layouts/footer' %>
 </body>
 </html>

@@ -1,6 +1,8 @@
-<h1>All brogresser</h1>
+<div id='users' class='clearfix'>
+  <h1>All brogresser</h1>
+  <%= render @users %>
+</div>
 
-<%= render @users %>
-
-<div class="clear"></div>
-<%= paginate @users %>
+<div id='pagination'>
+  <%= paginate @users %>
+</div>

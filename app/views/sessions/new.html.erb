@@ -1,21 +1,23 @@
-<h1>Login</h1>
+<section id='login'>
+  <h1>Login</h1>
 
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %>
-    <div>
-      <%= email_field_tag :email, params[:email] %>
+  <%= form_tag sessions_path do %>
+    <div class="field">
+      <%= label_tag :email %>
+      <div>
+        <%= email_field_tag :email, params[:email] %>
+      </div>
     </div>
-  </div>
 
-  <div class="field">
-    <%= label_tag :password %>
-    <div>
-      <%= password_field_tag :password, params[:password] %>
+    <div class="field">
+      <%= label_tag :password %>
+      <div>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
     </div>
-  </div>
 
-  <div class="actions">
-    <%= submit_tag "Login" %> | Don't have an account? <%= link_to 'Register', register_path %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= submit_tag "Login" %> | Don't have an account? <%= link_to 'Register', register_path %>
+    </div>
+  <% end %>
+</section>

@@ -4,97 +4,78 @@
 
 $font-family: 'Galdeano', sans-serif;
 
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+a {
+  text-decoration: none;
+  color: #069;
+}
+
 body {
-  margin: 0px;
   font-family: $font-family;
-  font-size: 20px;
 }
-
-.clear {
-  clear: both;
-}
-
-/*a {*/
-  /*color: blue;*/
-
-  /*&:hover {*/
-    /*color: black;*/
-  /*}*/
-/*}*/
-
 input, textarea {
   font-family: $font-family;
-  font-size: 20px;
-}
-
-input[type='text'], input[type='email'], input[type='password'] {
-
-  &:disabled {
-    background-color: #eeeeee; 
-  }
-}
-
-input[type='submit'], input[type='button'] {
-  /*button style here*/
-}
-
-input[type='url'] {
-  &:invalid {
-    /*border-color: red;*/
-  }
 }
 
 #header {
-  height: 20px;
-  padding: 10px 40px 10px 40px;
   background-color: #fdfddd;
+  padding: 6px 0;
   border-bottom: 1px solid;
   border-color: #ccc;
 
-  div {
+  #controls > div{
     float: left;
-    ul {
-      margin: 0 0 0 4px;
+    ul{
+      list-style: none;
+      margin: 0;
       li {
-        list-style-type: none;
-        padding: 0 4px;
         float: left;
       }
     }
   }
-  #control {
-    float: right;
-  }
 }
 
 #main {
-  padding: 10px 40px;
   div {
     &.field, &.actions {
       margin-bottom: 10px;
     }
   }
 
-  #notice, #error_explanation {
-    list-style-type: none;
+  #notice {
+    list-style: none;
     background-color: #fdfddd;
-    padding: 10px 40px 10px 10px;
+    padding: 10px 0 10px 10px;
     border: 1px solid;
     border-radius: 4px;
     border-color: #ccc;
-    margin: 10px 0 40px 0;
   }
 
-  #notice {
-    text-align: center;
+  #error_explanation {
+    list-style: none;
+    background-color: #fdfddd;
+    padding: 4px 0 4px 10px;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: #ccc;
+    margin-bottom: 10px;
   }
 }
 
 #footer {
-  margin-top: 1em;
+  margin-top: 10px;
   border-top: 1px dashed #ccc;
-
-  p {
-    color: #999;
-  }
+  color: #999;
 }

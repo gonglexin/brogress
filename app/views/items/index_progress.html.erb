@@ -1,13 +1,17 @@
 <h1>Your brogress</h1>
 
-<%= link_to_function 'Image View', "$('#list').hide(); $('#image').show()" %> |
-<%= link_to_function 'List View',  "$('#image').hide(); $('#list').show()"%> |
-<%= link_to 'Add a new brogress', new_item_path %>
-<div id="list">
-  <%= render partial: 'item_progress', collection: @items, as: :item %>
+<div class="clearfix">
+  <%= link_to_function 'Image View', "$('#list').hide(); $('#image').show()" %> |
+  <%= link_to_function 'List View',  "$('#image').hide(); $('#list').show()"%> |
+  <%= link_to 'Add a new brogress', new_item_path %>
+  <div id="list">
+    <%= render partial: 'item_progress', collection: @items, as: :item %>
+  </div>
+  <div id="image" style="display: none;">
+    <%= render @items %>
+  </div>
 </div>
-<div id="image" style="display: none;">
-  <%= render @items %>
+
+<div class="clearfix">
+  <%= paginate @items %>
 </div>
-<div class="clear"></div>
-<%= paginate @items %>

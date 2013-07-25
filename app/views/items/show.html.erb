@@ -1,11 +1,7 @@
 <h1><%= @item.title %></h1>
 
 <div class="item">
-  <% if @item.image.url %>
-    <%= link_to image_tag(@item.image), @item %>
-  <% else %>
-    <%= link_to image_tag("http://placekitten.com/#{140 + @item.id}"), @item %>
-  <% end %>
+  <%= item_image_tag(@item) %>
   <div class="title"><%= @item.title %></div>
 </div>
 
@@ -61,6 +57,7 @@
   <%= link_to 'Back', items_path %>
 </div>
 
-<div class="clear"> </div>
-<%= render partial: 'item_progress', collection: [@item], as: :item %>
+<div class="clearfix">
+  <%= render partial: 'item_progress', collection: [@item], as: :item %>
+</div>
 

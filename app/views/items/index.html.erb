@@ -9,6 +9,10 @@
   <%#</div>%>
 <%#<% end %>
 
-<%= render @items %>
-<div class="clear"></div>
-<%= paginate @items %>
+<div class="clearfix">
+  <%= render @items %>
+</div>
+
+<div class="clearfix">
+  <%= paginate @items %>
+</div>
