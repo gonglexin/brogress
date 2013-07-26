@@ -9,7 +9,7 @@ Brogress::Application.routes.draw do
 
   resources :users
   resources :sessions, only: :create
-  resources :items, except: :destroy
+  resources :items
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
