@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       sign_in user
-      redirect_to items_path, notice: "Welcome, #{user.name}"
+      redirect_to items_path, notice: "Welcome, #{user.name}!"
     else
       flash[:error] = "Invalid email/password combination."
       redirect_to login_url
