@@ -1,61 +1,65 @@
-<h1><%= @item.title %></h1>
-
-<div class="item">
-  <%= item_image_tag(@item) %>
-  <div class="title"><%= @item.title %></div>
-</div>
-
-<div class="info">
-  <p>
-    <strong>Title:</strong>
-    <%= @item.title %>
-  </p>
-
-  <p>
-    <strong>Subtitle:</strong>
-    <%= @item.subtitle %>
-  </p>
-
-  <p>
-    <strong>Progress:</strong>
-    <%= @item.progress %>
-  </p>
-
-  <p>
-    <strong>Total:</strong>
-    <%= @item.total %>
-  </p>
-
-  <p>
-    <strong>Public:</strong>
-    <%= @item.public ? 'Yes' : 'No' %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= @item.author %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= @item.category %>
-  </p>
-
-  <p>
-    <strong>Url:</strong>
-    <%= link_to @item.url, @item.url %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @item.description %>
-  </p>
-
+<div class="clearfix">
+  <div>
+    
+  <h1><%= @item.title %></h1>
   <% if @item.user == current_user %>
     <%= link_to 'Edit', edit_item_path(@item) %> |
     <%= link_to 'Delete', item_path(@item), method: :delete, data: { confirm: 'Are you sure?'} %> |
   <% end %>
   <%= link_to 'Back', items_path %>
+  </div>
+
+  <div class="item">
+    <%= item_image_tag(@item) %>
+    <div class="title"><%= @item.title %></div>
+  </div>
+
+  <div class="info">
+    <p>
+      <strong>Title:</strong>
+      <%= @item.title %>
+    </p>
+
+    <p>
+      <strong>Subtitle:</strong>
+      <%= @item.subtitle %>
+    </p>
+
+    <p>
+      <strong>Progress:</strong>
+      <%= @item.progress %>
+    </p>
+
+    <p>
+      <strong>Total:</strong>
+      <%= @item.total %>
+    </p>
+
+    <p>
+      <strong>Public:</strong>
+      <%= @item.public ? 'Yes' : 'No' %>
+    </p>
+
+    <p>
+      <strong>Author:</strong>
+      <%= @item.author %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @item.category %>
+    </p>
+
+    <p>
+      <strong>Url:</strong>
+      <%= link_to @item.url, @item.url %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @item.description %>
+    </p>
+  </div>
 </div>
 
 <div class="clearfix">
