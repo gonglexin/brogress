@@ -9,9 +9,9 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, 'brogress.me'
+set :domain, 'www.yzwffs.com'
 set :deploy_to, '/home/gonglexin/www/brogress.me'
-set :repository, 'https://gonglexin@bitbucket.org/gonglexin/brogress.git'
+set :repository, 'git@bitbucket.org:gonglexin/brogress.git'
 set :branch, 'master'
 
 set :rvm_path, "/usr/local/rvm/scripts/rvm"
