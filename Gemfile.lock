@@ -67,6 +67,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.7.7)
     mysql2 (0.3.13)
+    newrelic_rpm (3.6.7.159)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -133,6 +134,7 @@ DEPENDENCIES
   kaminari
   mini_magick
   mysql2
+  newrelic_rpm
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
