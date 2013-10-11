@@ -11,7 +11,7 @@
               <%= link_to 'Your brogress', items_path %> |
             </li>
             <li>
-              <%= link_to 'All public brogress', controller: 'items', action: 'index', all: true %> |
+              <%= link_to 'All public brogress', items_path(all: true) %> |
             </li>
             <li>
               <%= link_to 'All brogresser', users_path %>
